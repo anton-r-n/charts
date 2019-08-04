@@ -1,0 +1,65 @@
+.Table {
+  cursor: default;
+  min-width: 300px;
+  table-layout: fixed;
+  margin: 0 auto;
+}
+
+.Table.columns1,
+.Table.columns2,
+.Table.columns3 {
+  width: 300px;
+}
+
+.Table.columns4,
+.Table.columns5,
+.Table.columns6 {
+  width: 500px;
+}
+
+.Table.columns7 {
+  width: 600px;
+}
+
+.Table .cell {
+  display: block;
+  padding: 0 8px;
+  box-sizing: border-box;
+  max-width: 300px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  color: inherit;
+}
+
+.Table td {
+  text-align: left;
+  vertical-align: top;
+}
+
+.Table td:first-child {
+  width: 100px;
+}
+
+.Table thead .cell {
+  margin-top: -1px;
+  font-weight: bold;
+  border-top: 1px solid #e4e4e4;
+}
+
+.Table .cell.type_number {
+  text-align: right;
+}
+
+.Table tbody td {
+  border-width: 0;
+}
+
+.Table tbody tr:nth-child(odd) td {
+  background-color: #f0f0f0;
+}
+
+.Table tbody tr:hover td {
+  background-color: #92d2ce;
+}

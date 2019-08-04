@@ -1,0 +1,18 @@
+.DashboardTiming {
+  display: inline-block;
+  position: relative;
+  line-height: 47px;
+  cursor: default;
+}
+
+.DashboardTiming .field {
+  margin: 0 4px;
+  border-radius: 3px;
+  line-height: 24px;
+  display: inline-block;
+}
+
+.DashboardTiming .field:hover {
+  outline: 4px solid #c6d0d4;
+  background-color: #c6d0d4;
+}

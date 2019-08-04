@@ -1,0 +1,43 @@
+(function(w) {
+  /* Namespace */
+  var Utils = w.Utils = w.Utils || {};
+
+  Utils.cities = [
+    ['Bangkok', 13.75, 100.47],
+    ['Bangalore', 12.97, 77.57],
+    ['Beijing', 39.92, 116.38],
+    ['Berlin', 52.52, 13.38],
+    ['Boston', 42.36, -71.06],
+    ['Cairo', 30.05, 31.23],
+    ['Chongqing', 29.56, 106.57],
+    ['Denver', 39.76, -104.99],
+    ['Dhaka', 23.7, 90.37],
+    ['Istanbul', 41.01, 28.95],
+    ['Jakarta', -6.2, 106.82],
+    ['Karachi', 24.86, 67.01],
+    ['Kinshasa', 4.32, 15.32],
+    ['Lagos', 6.45, 3.39],
+    ['Lahore', 31.55, 74.34],
+    ['Lima', -12.04, -77.03],
+    ['London', 51.51, 0],
+    ['Los Angeles', 34.05, -118.25],
+    ['Madrid', 40.38, -3.72],
+    ['Mexico', 19.433, -99.13],
+    ['Miami', 25.77, -80.21],
+    ['Moscow', 55.75, 37.62],
+    ['Mumbai', 18.97, 72.82],
+    ['New York City', 40.71, -74],
+    ['Novosibirsk', 55.02, 82.93],
+    ['Paris', 48.86, 2.35],
+    ['Rome', 41.9, 12.5],
+    ['Saint Petersburg', 59.95, 30.3],
+    ['San Francisco', 37.78, -122.42],
+    ['Seattle', 47.61, -122.33],
+    ['Seoul', 37.57, 126.97],
+    ['Shanghai', 31.2, 121.5],
+    ['Shenzhen', 22.55, 114.1],
+    ['São Paulo', -23.55, -46.63],
+    ['Tehran', 35.7, 51.42],
+    ['Tokyo', 35.68, 139.68],
+  ];
+})(this);

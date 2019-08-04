@@ -1,0 +1,63 @@
+.PieChart > .center {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  cursor: default;
+  vertical-align: top;
+}
+
+.PieChart .total {
+  font-size: 200%;
+  fill: #777;
+}
+
+
+
+.PieChart .area path {
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+
+.PieChart .area0 path,
+.PieChart .area .fill0 {
+  fill: #08b7ff;
+}
+
+.PieChart .area1 path,
+.PieChart .area .fill1 {
+  fill: #ff960d;
+}
+
+.PieChart .area2 path,
+.PieChart .area .fill2 {
+  fill: #2fb1b3;
+}
+
+.PieChart .area3 path,
+.PieChart .area .fill3 {
+  fill: #688c1c;
+}
+
+.PieChart .area4 path,
+.PieChart .area .fill4 {
+  fill: #ef6363;
+}
+
+.PieChart .area5 path,
+.PieChart .area .fill5 {
+  fill: #9467bd;
+}
+
+.opacity_metrics .PieChart path { opacity: .3; }
+
+.metrics0 .PieChart path:nth-child(1) { opacity: 1; }
+.metrics1 .PieChart path:nth-child(2) { opacity: 1; }
+.metrics2 .PieChart path:nth-child(3) { opacity: 1; }
+.metrics3 .PieChart path:nth-child(4) { opacity: 1; }
+.metrics4 .PieChart path:nth-child(5) { opacity: 1; }
+.metrics5 .PieChart path:nth-child(6) { opacity: 1; }
+.metrics6 .PieChart path:nth-child(7) { opacity: 1; }
+.metrics7 .PieChart path:nth-child(8) { opacity: 1; }
+.metrics8 .PieChart path:nth-child(9) { opacity: 1; }
+.metrics9 .PieChart path:nth-child(10) { opacity: 1; }

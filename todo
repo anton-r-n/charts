@@ -1,0 +1,22 @@
+- Add tooltips to Geo Map chart
+- Implement expand widget behavior
+- Node server
+- Live updates
+- User preference
+- Multi-level menu
+- Embedded menu
+- Try single metrics charts
+- Pinterest-styled reports
+- Reimplement Groups as wrappers
+
+- Add support for focus event to FormDropdown
+
+- Highlight neighbor elements on hover event on sankey diagram
+- Incoming and outcoming for sankey diagram
+- Walkme guidance
+- Time-interval selector
+
+Done:
+- Geo Map chart
+- Donut chart
+- Split bars in bar chart to separated nodes

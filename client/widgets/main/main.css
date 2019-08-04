@@ -1,0 +1,35 @@
+/*
+ * Define z-index between Content, Menu, Modal, and Tooltip
+ */
+.Main > .MainContent {
+  position: relative;
+  z-index: 1;
+}
+
+.Main > .MainMenu {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+
+.Main > .MainModal {
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+}
+
+.Main > .MainTooltip {
+  position: fixed;
+  z-index: 4;
+}
+
+.Main > .MainMenu,
+.Main > .MainModal,
+.Main > .MainContent,
+.Main > .MainTooltip {
+  /* will-change: transform */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}

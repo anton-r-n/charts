@@ -1,0 +1,27 @@
+.Form .field,
+.Form .label {
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.Form .label label {
+  display: block;
+  font-weight: 500;
+  text-align: left;
+}
+
+@media (min-width: 40rem) {
+  .Form .label {
+    width: 30%;
+    float: left;
+  }
+
+  .Form .label label {
+    font-weight: normal;
+  }
+
+  .Form .field {
+    width: 70%;
+    float: right;
+  }
+}

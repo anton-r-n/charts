@@ -1,0 +1,82 @@
+.ChartAxis {
+  font-size: 83.333%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ChartAxis .tick {
+  position: absolute;
+  border-color: rgba(0, 0, 0, .5);
+  border-width: 0;
+  border-style: solid;
+}
+
+.ChartAxis .tick .text {
+  position: absolute;
+  text-shadow: white 0 0 1px;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ChartAxis.left .tick,
+.ChartAxis.right .tick {
+  width: 100%;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, .1);
+}
+
+.Chart.lines .ChartAxis.left .tick.first {
+  border-bottom-color: rgba(0, 0, 0, .5);
+}
+
+.ChartAxis.left .tick .text,
+.ChartAxis.right .tick .text {
+  top: -20px;
+  margin: 0 3px;
+}
+
+.ChartAxis.linear.bottom .tick {
+  width: 0;
+  height: 4px;
+  border-left-width: 1px;
+}
+
+.ChartAxis.linear.bottom .tick.first .text {
+  left: 0;
+  text-align: left;
+}
+
+.ChartAxis.linear.bottom .tick.last {
+  margin-left: -1px;
+}
+
+.ChartAxis.linear.bottom .tick.last .text {
+  text-align: right;
+  left: auto;
+  right: 0;
+}
+
+.ChartAxis.linear.bottom .tick .text {
+  width: 6em;
+  left: -3em;
+  text-align: center;
+}
+
+.ChartAxis.categories.bottom .tick {
+  top: 0;
+}
+
+.ChartAxis.categories.bottom .tick .text {
+  margin: 0 1%;
+  position: static;
+  border-top: 1px solid rgba(0, 0, 0, .5);
+  text-align: center;
+}
+
+.Chart.bars .ChartAxis.left.linear .tick.first {
+  border-bottom: none;
+}

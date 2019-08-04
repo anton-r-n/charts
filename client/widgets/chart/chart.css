@@ -1,0 +1,123 @@
+.Chart {
+  padding: 16px 0 24px 0;
+  position: relative;
+  cursor: default;
+}
+
+.Chart.tiny {
+  padding: 0;
+}
+
+.Chart > .canvas {
+  position: relative;
+}
+
+.Chart .ChartSVG {
+  display: block;
+}
+
+.Chart .highlight {
+  width: 1px;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,.4) 50%,rgba(255,255,255,0) 0%);
+  background-position: right;
+  background-size: 1px 3px;
+  background-repeat: repeat-y;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* will-change: transform */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.Chart .highlight .dot {
+  position: absolute;
+  left: -3px;
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 4px;
+}
+
+.Chart .line path {
+  stroke-width: 1;
+  fill: none;
+}
+
+/* Colors for areas and lines */
+.Chart .area0 { fill: #d4f1fe; }
+.Chart .line0 { stroke: #08b7ff; }
+.Chart.bars .area0 { fill: #08b7ff; }
+.Chart .dot.color_0 { background-color: #08b7ff; }
+
+.Chart .area1 { fill: #ffebd2; }
+.Chart .line1 { stroke: #ff960d; }
+.Chart.bars .area1 { fill: #ff960d; }
+.Chart .dot.color_1 { background-color: #ff960d; }
+
+.Chart .area2 { fill: #c6e8e9; }
+.Chart .line2 { stroke: #2fb1b3; }
+.Chart.bars .area2 { fill: #2fb1b3; }
+.Chart .dot.color_2 { background-color: #2fb1b3; }
+
+.Chart .area3 { fill: #e3f1c7; }
+.Chart .line3 { stroke: #88c802; }
+.Chart.bars .area3 { fill: #688c1c; }
+.Chart .dot.color_3 { background-color: #88c802; }
+
+.Chart .area4 { fill: #f7b1b1; }
+.Chart .line4 { stroke: #ef6363; }
+.Chart.bars .area4 { fill: #ef6363; }
+.Chart .dot.color_4 { background-color: #ef6363; }
+
+.Chart .area5 { fill: #c5b0d5; }
+.Chart .line5 { stroke: #9467bd; }
+.Chart.bars .area5 { fill: #9467bd; }
+.Chart .dot.color_5 { background-color: #9467bd; }
+
+
+.Chart.bars .area path {
+  color-rendering: optimizeSpeed;
+  shape-rendering: optimizeSpeed;
+  /* shape-rendering: crispEdges; */
+}
+
+.opacity_col .Chart.bars path {
+  opacity: .3;
+}
+
+.col0  .Chart.bars path:nth-child(0),
+.col1  .Chart.bars path:nth-child(1),
+.col2  .Chart.bars path:nth-child(2),
+.col3  .Chart.bars path:nth-child(3),
+.col4  .Chart.bars path:nth-child(4),
+.col5  .Chart.bars path:nth-child(5),
+.col6  .Chart.bars path:nth-child(6),
+.col7  .Chart.bars path:nth-child(7),
+.col8  .Chart.bars path:nth-child(8),
+.col9  .Chart.bars path:nth-child(9),
+.col10 .Chart.bars path:nth-child(10),
+.col11 .Chart.bars path:nth-child(11),
+.col12 .Chart.bars path:nth-child(12),
+.col13 .Chart.bars path:nth-child(13) {
+  opacity: 1;
+}
+
+.opacity_metrics .Chart.bars .area0,
+.opacity_metrics .Chart.bars .area1,
+.opacity_metrics .Chart.bars .area2,
+.opacity_metrics .Chart.bars .area3,
+.opacity_metrics .Chart.bars .area4,
+.opacity_metrics .Chart.bars .area5 {
+  opacity: .3;
+}
+
+.metrics0 .Chart.bars .area0,
+.metrics1 .Chart.bars .area1,
+.metrics2 .Chart.bars .area2,
+.metrics3 .Chart.bars .area3,
+.metrics4 .Chart.bars .area4,
+.metrics5 .Chart.bars .area5 {
+  opacity: 1;
+}

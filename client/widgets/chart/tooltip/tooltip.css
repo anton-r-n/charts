@@ -1,0 +1,80 @@
+.ChartTooltip .header {
+  font-weight: bold;
+}
+
+.ChartTooltip .selected {
+  background-color: #eaeaea;
+  padding: 0 1em;
+  margin: 0 -1em;
+}
+
+.ChartTooltip .dot {
+  position: relative;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 4px;
+  margin: 0 1em 0 5px;
+}
+
+.ChartTooltip .dot:after {
+  content: '';
+  position: absolute;
+  width: 17px;
+  height: 1px;
+  top: 3px;
+  left: -5px;
+}
+
+.ChartTooltip .value {
+  vertical-align: top;
+  text-align: right;
+  display: inline-block;
+  width: 2em;
+}
+
+.ChartTooltip .descr {
+  vertical-align: top;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 8em;
+}
+
+.ChartTooltip .color_0 .dot,
+.ChartTooltip .color_0 .dot:after {
+  background-color: #08b7ff;
+}
+
+.ChartTooltip .color_1 .dot,
+.ChartTooltip .color_1 .dot:after {
+  background-color: #ff960d;
+}
+
+.ChartTooltip .color_2 .dot,
+.ChartTooltip .color_2 .dot:after {
+  background-color: #2fb1b3;
+}
+
+.ChartTooltip .color_3 .dot,
+.ChartTooltip .color_3 .dot:after {
+  background-color: #688c1c;
+}
+
+.ChartTooltip .color_4 .dot,
+.ChartTooltip .color_4 .dot:after {
+  background-color: #ef6363;
+}
+
+.ChartTooltip .color_5 .dot,
+.ChartTooltip .color_5 .dot:after {
+  background-color: #9467bd;
+}
+
+.ChartTooltip .color_0.selected { background-color: #d4f1fe; }
+.ChartTooltip .color_1.selected { background-color: #ffebd2; }
+.ChartTooltip .color_2.selected { background-color: #c6e8e9; }
+.ChartTooltip .color_3.selected { background-color: #e3f1c7; }
+.ChartTooltip .color_4.selected { background-color: #f7b1b1; }
+.ChartTooltip .color_5.selected { background-color: #c5b0d5; }

@@ -1,0 +1,81 @@
+.button {
+  outline: none;
+  border: 1px solid #999;
+  border-radius: 2px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .5px;
+  font-size: 75%;
+  padding: 2px 16px 0;
+  line-height: 2.5em;
+  display: inline-block;
+  margin: 2px 4px 2px 4px;
+  color: #202020;
+  cursor: default;
+  background-color: #fff;
+}
+
+.button:first-child {
+  margin-left: 0;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
+
+.button.mainTarget {
+  color: #fff;
+  background-color: #2196f3;
+  border-color: #1e88e5;
+}
+
+.button:hover,
+.button.mainTarget:hover {
+  background-color: #1e88e5;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16),0 2px 4px 0 rgba(0,0,0,0.12);
+}
+
+input.button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  line-height: 2em;
+  font-size: 11px;
+}
+
+.buttonClose {
+  outline: none;
+  display: block;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  right: 1.5em;
+  top: .3em;
+}
+
+.buttonClose:after,
+.buttonClose:before {
+  content: '';
+  display: block;
+  width: 1.5em;
+  height: .1em;
+  background-color: #999;
+  position: absolute;
+  top: 50%;
+  left: 12.5%;
+}
+
+.buttonClose:hover:after,
+.buttonClose:hover:before {
+  background-color: #f77;
+}
+
+.buttonClose:before {
+  transform: rotate(45deg);
+}
+
+.buttonClose:after {
+  transform: rotate(-45deg);
+}

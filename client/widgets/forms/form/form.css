@@ -1,0 +1,74 @@
+.Form {
+  max-width: 45rem;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 1rem 0;
+}
+
+.Form .row {
+  padding: .5rem 0 1rem;
+  box-sizing: border-box;
+  border-top: 1px solid transparent;
+  position: relative;
+  top: -1px;
+}
+
+.Form .row:after {
+  content: '';
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.Form .header {
+  font-size: 150%;
+  text-align: left;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 13px 16px 11px;
+}
+
+.Form .row.submit {
+  text-align: right;
+}
+
+.Form .row.submit .submit.button {
+  margin: -4px 4px;
+}
+
+@media (min-width: 40rem) {
+  .Form {
+    width: 40rem;
+  }
+
+  .Form.login {
+    width: 30rem;
+    margin-top: -2px;
+  }
+}
+
+.InlineForm {
+  margin: -2px 0 -3px;
+}
+
+.InlineForm .row,
+.InlineForm .label,
+.InlineForm .field {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.InlineForm .row {
+  margin: 8px 0 16px 0;
+}
+
+.InlineForm .label,
+.InlineForm .field {
+  margin: 0 .5rem 0 0;
+}
+
+.InlineForm .row.submit .submit.button {
+  margin: -4px 4px;
+}

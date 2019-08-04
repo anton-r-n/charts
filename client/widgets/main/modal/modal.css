@@ -1,0 +1,58 @@
+.MainModal .modalLayer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 1em 1%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.MainModal .modalLayer:last-child {
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.MainModal .modalContent {
+  display: inline-block;
+  max-width: 95%;
+  min-width: 250px;
+  background-color: #fff;
+  border-radius: 3px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  top: 0;
+  box-shadow: 0 16px 24px 0 rgba(0,0,0,.1);
+}
+
+.MainModal .modalHeader {
+  margin: 0;
+  padding: 0 50px 0 16px;
+  line-height: 31px;
+  font-weight: bold;
+  border-bottom: 1px solid #ededed;
+}
+
+.MainModal .modalHeader .MainBtn.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 31px;
+  background-position: 8px 8px;
+}
+
+.MainModal .modalBody {
+  padding: 8px 16px;
+}
+
+.MainModal .modalLayer:last-child .modalContent {
+  transform: translate(0, -75px);
+  transition: transform .2s ease;
+}
+
+.MainModal.animated .modalLayer:last-child .modalContent {
+  transform: translate(0, 0);
+}

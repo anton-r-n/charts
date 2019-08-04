@@ -1,0 +1,85 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #c6d0d4;
+  color: #202020;
+  min-height: 100vh;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 12px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+html, body, input, td, th, textarea, select, option {
+  line-height: 1.5rem;
+  font-family:
+    'Helvetica Neue',
+    'Lucida Grande',
+    sans-serif;
+}
+
+input, td, th, textarea, select, option {
+  font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, td {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5rem;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: block;
+}
+
+optgroup {
+  font-style: normal;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+svg {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.nooutline {
+  outline-style: none;
+}
+
+pre.error {
+  line-height: 1.5rem;
+  margin: 1.5rem 1rem 1rem;
+  white-space: pre-wrap;
+}

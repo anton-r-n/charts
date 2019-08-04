@@ -1,0 +1,7 @@
+.GeoMap_Tiles.size256 .tile {
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  display: block;
+  background-size: 256px 256px;
+}

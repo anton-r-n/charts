@@ -1,0 +1,37 @@
+.Sankey .arc {
+  stroke: #436371;
+  stroke-opacity: 0.3;
+  fill: none;
+}
+
+.Sankey .arc:hover {
+  stroke-opacity: 0.6;
+}
+
+.Sankey .vertex {
+  stroke: none;
+}
+
+.Sankey .vertex.group0 {
+  fill: #08b7ff;
+}
+
+.Sankey .vertex.group1 {
+  fill: #ff960d;
+}
+
+.Sankey .vertex.group2 {
+  fill: #2fb1b3;
+}
+
+.Sankey .vertex.group3 {
+  fill: #88c802;
+}
+
+.Sankey .vertex.group4 {
+  fill: #ef6363;
+}
+
+.Sankey .vertex.group5 {
+  fill: #9467bd;
+}

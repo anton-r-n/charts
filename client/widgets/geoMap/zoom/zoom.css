@@ -1,0 +1,44 @@
+.GeoMap_Zoom {
+  position: absolute;
+  top: 5%;
+  right: 2px;
+  z-index: 1;
+}
+
+.GeoMap_Zoom .plus,
+.GeoMap_Zoom .minus {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.GeoMap_Zoom .plus {
+  border-radius: 3px 3px 0 0;
+  margin-bottom: 1px;
+}
+
+.GeoMap_Zoom .minus {
+  border-radius: 0 0 3px 3px;
+}
+
+.GeoMap_Zoom .plus:after,
+.GeoMap_Zoom .plus:before,
+.GeoMap_Zoom .minus:before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  width: 10px;
+  height: 2px;
+  top: 13px;
+  left: 9px;
+}
+
+.GeoMap_Zoom .plus:after {
+  width: 2px;
+  height: 10px;
+  top: 9px;
+  left: 13px;
+}

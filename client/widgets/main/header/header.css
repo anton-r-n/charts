@@ -1,0 +1,26 @@
+.MainHeader {
+  height: 48px;
+  line-height: 48px;
+  position: relative;
+  background-color: #fff;
+  color: #202020;
+  box-sizing: border-box;
+  border-bottom: 1px solid #c6d0d4;
+}
+
+.MainHeader > .title {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 48px;
+  padding-left: 16px;
+  cursor: default;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.MainHeader > .buttons {
+  position: absolute;
+  height: 48px;
+  right: 0;
+  top: 0; 
+}

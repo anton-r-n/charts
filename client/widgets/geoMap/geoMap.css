@@ -1,0 +1,21 @@
+.GeoMap {
+  box-sizing: border-box;
+  background-color: #b8d3ed;
+  border-top: 1px solid #c6d0d4;
+  position: relative;
+  overflow: hidden;
+}
+
+.GeoMap.move {
+  cursor: move;
+}
+
+.GeoMap .c0 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.GeoMap .c1 {
+  position: absolute;
+}

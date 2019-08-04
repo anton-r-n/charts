@@ -1,0 +1,7 @@
+.Dashboard .controls {
+  min-height: 48px;
+  box-sizing: border-box;
+  background-color: #ebf1f3;
+  border-bottom: 1px solid #c6d0d4;
+  text-align: right;
+}
