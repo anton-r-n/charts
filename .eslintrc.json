@@ -1,0 +1,40 @@
+{
+  "env": { "browser": true, "es6": false },
+  "extends": "eslint:recommended",
+  "parserOptions": { "ecmaVersion": 5 },
+  "rules": {
+    "block-scoped-var": 2,
+    "camelcase": 2,
+    "complexity": ["error", 20],
+    "indent": [ "error", 2 ],
+    "key-spacing": ["error", {"mode": "strict"}],
+    "keyword-spacing": 2,
+    "linebreak-style": [ "error", "unix" ],
+    "max-len": ["error", { "code": 80 }],
+    "max-lines": ["error", {
+     "max": 250,
+     "skipComments": true,
+     "skipBlankLines": true
+    }],
+    "max-lines-per-function": ["error", {
+     "max": 50,
+     "skipComments": true,
+     "skipBlankLines": true
+    }],
+    "max-params": ["error", {"max": 6}],
+    "max-statements": ["error", 25, { "ignoreTopLevelFunctions": true }],
+    "no-eval": 2,
+    "no-extend-native": 2,
+    "no-extra-bind": 2,
+    "no-extra-label": 2,
+    "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
+    "no-implied-eval": 2,
+    "no-lone-blocks": 2,
+    "no-multi-spaces": 2,
+    "no-undef-init": 2,
+    "no-undefined": 2,
+    "quotes": [ "error", "single" ],
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+    "spaced-comment": ["error", "always"]
+  }
+}

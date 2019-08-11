@@ -5,11 +5,11 @@
   var buttons = (function() {
     var plus = $.n('div', {'class': 'plus'});
     var minus = $.n('div', {'class': 'minus'});
-    return $.n('div', {'class': 'GeoMap_Zoom'}, [plus, minus]);
+    return $.n('div', {'class': 'GeoMapZoom'}, [plus, minus]);
   })();
 
   /* Static component for buttons + - */
-  $.GeoMap_Zoom = function() {
+  $.GeoMapZoom = function() {
     return buttons;
   };
 })(this);

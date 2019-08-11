@@ -54,14 +54,12 @@
     conf.sY = $.charts.scale('linear', conf.rY, conf.dY);
 
     conf.bucketGap = Math.min(conf.bucketGapMax, Math.max(
-        conf.rX.max / conf.dX.max * conf.bucketGap, conf.bucketGapMin));
+      conf.rX.max / conf.dX.max * conf.bucketGap, conf.bucketGapMin));
 
     /* zero Y to calculate fill area */
     conf.y0 = conf.sY(conf.zero ? 0 : conf.dY.min);
-
     conf.index = $.charts.index(conf.rX.max, conf.dX.max, 1);
-
-    conf.tickWidth = (conf.rX.max / conf.dX.max - conf.bucketGap);
+    conf.tickWidth = conf.rX.max / conf.dX.max - conf.bucketGap;
     if (!conf.stacked) { conf.tickWidth /= rows.length }
 
     /* mapping data */
@@ -74,5 +72,5 @@
       conf._metrics = selected.metrics;
       $.syncEvent('evtHighlight', selected);
     }
-  };
+  }
 })(this);

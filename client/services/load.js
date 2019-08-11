@@ -1,6 +1,6 @@
 (function(w) {
   var $ = w.$ = w.$ || {},
-      d = w.document;
+    d = w.document;
 
   $.loadScript = function(src, fn) {
     var script = d.createElement('script');

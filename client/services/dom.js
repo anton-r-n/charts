@@ -1,6 +1,6 @@
 (function(w) {
   var $ = w.$ = w.$ || {},
-      d = w.document;
+    d = w.document;
 
   $.svgNs = 'http://www.w3.org/2000/svg';
 
@@ -93,8 +93,8 @@
 
   $.selector = function(s) {
     return String(s)
-        .replace(/\s/mg, ' ')
-        .replace(/\\/g, '\\\\')
-        .replace(/"/g, '\\"');
+      .replace(/\s/mg, ' ')
+      .replace(/\\/g, '\\\\')
+      .replace(/"/g, '\\"');
   };
 })(this);

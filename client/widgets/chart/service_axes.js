@@ -115,17 +115,17 @@
       step: x.step || 0,
     };
     switch (x.dataFormat) {
-      case 'iso':
-        range.min = $.parseDate(range.min) / 1000;
-        range.max = $.parseDate(range.max) / 1000;
-        range.step = 86400;
-        break;
-      case 'ms':
-        range.min /= 1000;
-        range.max /= 1000;
-        range.step /= 1000;
-        break;
+    case 'iso':
+      range.min = $.parseDate(range.min) / 1000;
+      range.max = $.parseDate(range.max) / 1000;
+      range.step = 86400;
+      break;
+    case 'ms':
+      range.min /= 1000;
+      range.max /= 1000;
+      range.step /= 1000;
+      break;
     }
     return range;
-  };
+  }
 })(this);

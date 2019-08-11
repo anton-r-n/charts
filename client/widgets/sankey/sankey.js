@@ -4,9 +4,9 @@
 
   /* Defaults */
   var barWidth = 8,
-      barSpace = 10,
-      margin = 32,
-      minHeight = 24;
+    barSpace = 10,
+    margin = 32,
+    minHeight = 24;
 
   /* Widget */
   $.Sankey = function(model) {
@@ -36,7 +36,7 @@
 
   function container(nodes, w, h) {
     return $.svg('svg', {'width': w, 'height': h}, nodes);
-  };
+  }
 
   function transform(nodes) {
     return $.svg('g', {'transform': 'translate(.5,.5)'}, nodes);
@@ -47,7 +47,7 @@
   }
 
   function barNodes(graph, scale) {
-    var i, j, prev, cur, col, nodes = [];
+    var i, j, prev, col, nodes = [];
     for (i = 0; i < graph.length; i++) {
       prev = null;
       col = graph[i].vertexes;
@@ -97,10 +97,10 @@
         target.y1 = target.y1 || 0;
         h = scaleY * arc.weight;
         nodes.push(arcCurve(
-            tooltip(arc),
-            [source.x + barWidth, $.round(source.y + source.y0 + h / 2, 1)],
-            [target.x, $.round(target.y + target.y1 + h / 2, 1)],
-            h));
+          tooltip(arc),
+          [source.x + barWidth, $.round(source.y + source.y0 + h / 2, 1)],
+          [target.x, $.round(target.y + target.y1 + h / 2, 1)],
+          h));
         source.y0 += h;
         target.y1 += h;
       }
@@ -152,18 +152,18 @@
    */
   function collect(table) {
     var graph = [],
-        len = table.length > 0 ? table[0].length : 0,
-        prevVertexMap,
-        vertexMap,
-        arcMap,
-        key,
-        arc,
-        source,
-        target,
-        vertex,
-        weight,
-        i,
-        j;
+      len = table.length > 0 ? table[0].length : 0,
+      prevVertexMap,
+      vertexMap,
+      arcMap,
+      key,
+      arc,
+      source,
+      target,
+      vertex,
+      weight,
+      i,
+      j;
 
     for (i = 0; i < len; i += 2) {
       arcMap = {};
@@ -242,7 +242,7 @@
     var len = t.length > 0 ? t[0].length : 0;
     for (x = 0; x < len; x++) {
       for (y = 0; y < t.length; y++) {
-        t[y][x] = x % 2 ? (t[y][x] > 0 ? t[y][x] : 0) : '' + t[y][x];
+        t[y][x] = x % 2 ? t[y][x] > 0 ? t[y][x] : 0 : '' + t[y][x];
       }
     }
     return t;

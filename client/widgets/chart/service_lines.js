@@ -32,11 +32,11 @@
     return acc;
   }
 
-  function barArea(v, i) { return 'M ' + v[1].join(' ') + ' z' }
+  function barArea(v) { return 'M ' + v[1].join(' ') + ' z' }
 
   /* Process one metrics */
   function drawBar(s) {
-    var shift = (this.stacked ? 0 : (this.width + this.space) * this.idx);
+    var shift = this.stacked ? 0 : (this.width + this.space) * this.idx;
     var p1 = [round(s[0] + this.bucketGap + shift), s[1]];
     var p2 = [round(s[0] + shift + this.width), s[1]];
     p2.y1 = p1.y1 = s.y1;
@@ -56,10 +56,10 @@
       idx: i,
     };
     var data = row
-        .map(setY1, prev)
-        .map(drawBar, conf)
-        .map(area, this.y0)
-        .map(barArea);
+      .map(setY1, prev)
+      .map(drawBar, conf)
+      .map(area, this.y0)
+      .map(barArea);
     return {areas: data};
   }
 
@@ -69,10 +69,10 @@
   /* Process one metrics */
   function line(row, i, arr) {
     return row
-        .map(setY1, arr[i - 1] || _emptyArray)
-        .reduce(segment, [])
-        .map(stretch).map(area, this.y0)
-        .reduce(path, group(this, i));
+      .map(setY1, arr[i - 1] || _emptyArray)
+      .reduce(segment, [])
+      .map(stretch).map(area, this.y0)
+      .reduce(path, group(this, i));
   }
 
   /* Configure model for SVG group */
@@ -85,7 +85,7 @@
   /* Accumulate not-nulls series into segment */
   function segment(a, v) {
     typeof v[1] === 'number' ?
-        a.last ? a.last.push(v) : a.push(a.last = [v]) : a.last = null;
+      a.last ? a.last.push(v) : a.push(a.last = [v]) : a.last = null;
     return a;
   }
 

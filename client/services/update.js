@@ -55,8 +55,8 @@
   /* Handle cases when spec is widget, tag, or text */
   function cases(spec, node, widget) {
     return widget[0] >= 'A' && widget[0] <= 'Z' ?
-        spec.__ref = update(($[widget] || error)(spec), node) :
-        spec.name ? spec.__ref = updateNode(spec, node) : text(str(spec), node);
+      spec.__ref = update(($[widget] || error)(spec), node) :
+      spec.name ? spec.__ref = updateNode(spec, node) : text(str(spec), node);
   }
 
   /* Update a single node */
@@ -65,15 +65,15 @@
 
     /* Reuse the existent node or create a new one */
     node = node && eq(node.nodeName, next.name) ? node : next.xmlns ?
-        d.createElementNS(next.xmlns, next.name) : d.createElement(next.name);
+      d.createElementNS(next.xmlns, next.name) : d.createElement(next.name);
 
     /* Previous node spec */
     prev = obj(node.__spec);
 
     /* Attributes */
     n = obj(next.attrs), p = obj(prev.attrs);
-    for (k in p) { if (n[k] === _) node.removeAttribute(k) }
-    for (k in n) { if (n[k] !== p[k]) node.setAttribute(k, n[k]) }
+    for (k in p) if (n[k] === _) node.removeAttribute(k);
+    for (k in n) if (n[k] !== p[k]) node.setAttribute(k, n[k]);
 
     /* Childnodes */
     n = arr(next.nodes), p = node.childNodes;
@@ -85,13 +85,13 @@
 
     /* Properties */
     n = obj(next.props), p = obj(prev.props);
-    for (k in p) { if (n[k] === _) node[k] = null }
-    for (k in n) { if (n[k] !== p[k]) node[k] = n[k] }
+    for (k in p) if (n[k] === _) node[k] = null;
+    for (k in n) if (n[k] !== p[k]) node[k] = n[k];
 
     /* Events */
     n = obj(next.events), p = obj(prev.events);
-    for (k in p) { if (n[k] !== p[k]) node.removeEventListener(k, p[k]) }
-    for (k in n) { if (n[k] !== p[k]) node.addEventListener(k, n[k]) }
+    for (k in p) if (n[k] !== p[k]) node.removeEventListener(k, p[k]);
+    for (k in n) if (n[k] !== p[k]) node.addEventListener(k, n[k]);
 
     node.__spec = next;
     return node;
@@ -100,7 +100,7 @@
   /* Update or create a DOM TextNode with the value */
   function text(v, n) {
     return n && n.nodeType === 3 ?
-        (n.nodeValue !== v && (n.nodeValue = v), n) : d.createTextNode(v);
+      (n.nodeValue !== v && (n.nodeValue = v), n) : d.createTextNode(v);
   }
 
   /* Compare strings case insensitive */

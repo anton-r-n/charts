@@ -14,9 +14,9 @@
 
   function table(data, meta, cols) {
     var key,
-        link,
-        nodes = [],
-        table = $.tableSplit(meta, data);
+      link,
+      nodes = [],
+      table = $.tableSplit(meta, data);
 
     for (key in table) {
       link = key === 'tbody' ? meta.link : null;
@@ -53,7 +53,7 @@
       }
     }
     return href ?
-        {name: 'a', attrs: {'class': cls, 'href': href}, nodes: val} :
-        {name: 'div', attrs: {'class': cls}, nodes: val};
+      {name: 'a', attrs: {'class': cls, 'href': href}, nodes: val} :
+      {name: 'div', attrs: {'class': cls}, nodes: val};
   }
 })(this);

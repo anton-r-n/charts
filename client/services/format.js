@@ -1,6 +1,6 @@
 (function(w) {
   var $ = w.$ = w.$ || {},
-      prefix = ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];
+    prefix = ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];
 
   /**
    * The function returns a String containing the value represented in decimal
@@ -22,9 +22,9 @@
   $.humanize = function(value) {
     if (typeof value !== 'number') return value;
     var num = value.toExponential(3).split('e'),
-        mant = Math.round((+num[0]) * 100),
-        exp = +num[1],
-        res = (mant * Math.pow(10, exp % 3)) / 100;
+      mant = Math.round(num[0] * 100),
+      exp = +num[1],
+      res = mant * Math.pow(10, exp % 3) / 100;
     if (exp >= -3 && exp < 0) {
       res = '' + Math.round(value * 1000) / 1000;
     } else if (exp >= 0 && exp < 3) {
@@ -46,14 +46,14 @@
     units = units ? ' ' + units : '';
     if (typeof value !== 'undefined' && value !== null) {
       switch (type) {
-        case 'datetime':
-          value = $.tzformat(value, format); break;
-        case 'number':
-          value = $.humanize(value) + units; break;
-        case 'percent':
-          value = $.percent(value); break;
-        default:
-          value = '' + value + units;
+      case 'datetime':
+        value = $.tzformat(value, format); break;
+      case 'number':
+        value = $.humanize(value) + units; break;
+      case 'percent':
+        value = $.percent(value); break;
+      default:
+        value = '' + value + units;
       }
     }
     else {

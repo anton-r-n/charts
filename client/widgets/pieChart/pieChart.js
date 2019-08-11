@@ -54,7 +54,7 @@
   /* Spec for `total` value in the center of the pie chart */
   function total(value, r) {
     var attrs = {'class': 'total', 'text-anchor': 'middle', 'dy': $.rem / 2};
-    return $.svg('text', attrs, $.humanize(value));
+    return r < 20 ? '' : $.svg('text', attrs, $.humanize(value));
   }
 
   /* Config holds validated parameters from model */
@@ -69,7 +69,7 @@
       size: size,
       radius: radius,
       name: meta.name || 'Pie Chart',
-      bar: $.minMax((meta.bar || defaultBar), 1, radius),
+      bar: $.minMax(meta.bar || defaultBar, 1, radius),
       space: $.minMax(meta.space, 1, 10),
       color: meta.color === false ? false : $.minMax(meta.color, 0, 5),
     };
@@ -111,24 +111,24 @@
   /* Coordinates of each segment */
   function segment(start, end, r1, r2) {
     var large = end - start > Math.PI ? 1 : 0,
-        inner_sweep = start > end ? 1 : 0,
-        outer_sweep = start > end ? 0 : 1;
+      innerSweep = start > end ? 1 : 0,
+      outerSweep = start > end ? 0 : 1;
 
     var x1 = round(r1 * Math.cos(start)),
-        y1 = round(r1 * Math.sin(start)),
-        x2 = round(r2 * Math.cos(start)),
-        y2 = round(r2 * Math.sin(start)),
-        x3 = round(r2 * Math.cos(end)),
-        y3 = round(r2 * Math.sin(end)),
-        x4 = round(r1 * Math.cos(end)),
-        y4 = round(r1 * Math.sin(end));
+      y1 = round(r1 * Math.sin(start)),
+      x2 = round(r2 * Math.cos(start)),
+      y2 = round(r2 * Math.sin(start)),
+      x3 = round(r2 * Math.cos(end)),
+      y3 = round(r2 * Math.sin(end)),
+      x4 = round(r1 * Math.cos(end)),
+      y4 = round(r1 * Math.sin(end));
 
     return [
       'M', x1, y1,
       'L', x2, y2,
-      'A', r2, r2, 0, large, outer_sweep, x3, y3,
+      'A', r2, r2, 0, large, outerSweep, x3, y3,
       'L', x4, y4,
-      'A', r1, r1, 0, large, inner_sweep, x1, y1,
+      'A', r1, r1, 0, large, innerSweep, x1, y1,
       'Z'
     ].join(' ');
   }
@@ -160,8 +160,8 @@
 
   function angleFromPosition(e) {
     var rect = e.currentTarget.getBoundingClientRect(),
-        x = e.clientX - rect.left - rect.width / 2,
-        y = e.clientY - rect.top - rect.height / 2;
+      x = e.clientX - rect.left - rect.width / 2,
+      y = e.clientY - rect.top - rect.height / 2;
     return Math.atan2(-x, y) / (2 * Math.PI) + .5;
   }
 

@@ -76,7 +76,7 @@ hint:
 	@jshint $(JS_FILES) $(JS_TEST_FILES)
 
 lint:
-	@gjslint --strict $(JS_FILES) $(JS_TEST_FILES) $(MOCK_FILES)
+	@eslint $(JS_FILES)
 
 clean:
 	rm -rf $(BUILD)/*

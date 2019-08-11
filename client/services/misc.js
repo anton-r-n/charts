@@ -41,7 +41,8 @@
 
 
   $.arrSum = function(arr) {
-    for (var i = 0, s = 0; i < arr.length; s += +arr[i++] || 0);
+    var i, s;
+    for (i = 0; i < arr.length; s += +arr[i++] || 0);
     return s;
   };
 

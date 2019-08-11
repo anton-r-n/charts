@@ -2,7 +2,7 @@
   var $ = w.$ = w.$ || {};
   var d = w.document;
 
-  function App(model) {
+  function App() {
     this._width = $.contentWidth();
     this.model = {};
     this.prefix = '';
@@ -91,18 +91,18 @@
     initEventHandlers: function() {
       /* Bind instance methods */
       'click,popstate,update'.split(',')
-          .forEach(function(k) {this[k] = this[k].bind(this)}, this);
+        .forEach(function(k) {this[k] = this[k].bind(this)}, this);
 
       /* Add listeners */
       'click,popstate'.split(',')
-          .forEach(function(k) {w.addEventListener(k, this[k])}, this);
+        .forEach(function(k) {w.addEventListener(k, this[k])}, this);
     },
 
     destroy: function() {
       /* Remove listeners */
       $.events.remove();
       'click,popstate'.split(',')
-          .forEach(function(k) {w.removeEventListener(k, this[k])}, this);
+        .forEach(function(k) {w.removeEventListener(k, this[k])}, this);
     },
   };
 

@@ -43,13 +43,13 @@
       'mousedown': mousedown.bind(model),
       'wheel': debounceWheel.bind(model),
     };
-    var zoom = {widget: 'GeoMap_Zoom'};
-    var copyright = {widget: 'GeoMap_Copyright'};
-    var msg = model._wheelMsg = {widget: 'GeoMap_WheelMsg'};
+    var zoom = {widget: 'GeoMapZoom'};
+    var copyright = {widget: 'GeoMapCopyright'};
+    var msg = model._wheelMsg = {widget: 'GeoMapWheelMsg'};
     return $.n('div', attrs, [nodes, zoom, copyright, msg], {}, events);
   };
 
-  function debounceDrag(e) {
+  function debounceDrag() {
     var model = this;
     var meta = $.obj(model.meta);
     var drag = $.obj(meta._drag);
@@ -74,7 +74,7 @@
   }
 
   /* Update map center and redraw */
-  function dragstop(e) {
+  function dragstop() {
     var model = this;
     var meta = $.obj(model.meta);
     var c = meta._center;
@@ -136,14 +136,14 @@
     var z = meta._zoom;
     if ($.filterEvent(e)) {
       switch (e.target.className) {
-        case 'plus':
-          e.preventDefault();
-          zoomUpdate(z + 1, model, meta);
-          break;
-        case 'minus':
-          e.preventDefault();
-          zoomUpdate(z - 1, model, meta);
-          break;
+      case 'plus':
+        e.preventDefault();
+        zoomUpdate(z + 1, model, meta);
+        break;
+      case 'minus':
+        e.preventDefault();
+        zoomUpdate(z - 1, model, meta);
+        break;
       }
     }
   }
@@ -177,8 +177,8 @@
     var c = projection(m._lon, m._lat, m._size);
     var d = m._drag;
     if (d) {
-      c.x = rem(c.x + ((d.x0 - d.x1) || 0), m._size);
-      c.y = rem(c.y + ((d.y0 - d.y1) || 0), m._size);
+      c.x = rem(c.x + (d.x0 - d.x1 || 0), m._size);
+      c.y = rem(c.y + (d.y0 - d.y1 || 0), m._size);
     }
     return c;
   }
@@ -188,7 +188,7 @@
     var style = 'left:' + m._shift.x + 'px;top:' + m._shift.y + 'px';
     var attrs = {'class': 'c1', 'style': style};
     var tiles = {
-      widget: 'GeoMap_Tiles',
+      widget: 'GeoMapTiles',
       w: m._w,
       h: m._h,
       c: m._center,
@@ -199,7 +199,7 @@
       zoom: m._zoom,
     };
     var marks = {
-      widget: 'GeoMap_Marks',
+      widget: 'GeoMapMarks',
       center: m._center,
       shift: m._shift,
       width: m._w,
@@ -219,7 +219,7 @@
   $.GeoMap.projection = projection;
 
   /* Reminder without sign */
-  function rem(a, b) { return a < 0 ? a % b + b : a % b; }
+  function rem(a, b) { return a < 0 ? a % b + b : a % b }
 
   /* See: http://wiki.openstreetmap.org/wiki/Mercator */
   function x2lon(x) {

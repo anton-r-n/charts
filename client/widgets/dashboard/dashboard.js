@@ -35,21 +35,6 @@
     }
   }
 
-  function button(cls, evt) {
-    function mousedown(e) {
-      if ($.filterEvent(e)) {
-        e.preventDefault();
-        $.syncEvent('evtEscape');
-        $.syncEvent(evt);
-      }
-    }
-    return {
-      name: 'span',
-      attrs: {'class': 'MainBtn ' + cls},
-      events: {'mousedown': mousedown},
-    };
-  }
-
   function update() {
     updateDashboard(this, location);
   }

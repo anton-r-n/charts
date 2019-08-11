@@ -2,9 +2,9 @@
   /* Namespace */
   var $ = w.$ = w.$ || {};
 
-  $.GeoMap_Marks = function(model) {
+  $.GeoMapMarks = function(model) {
     var m = $.obj(model);
-    var cls = 'GeoMap_Marks' + (m.cls || '');
+    var cls = 'GeoMapMarks' + (m.cls || '');
     var nodes = marks(m.data, m.center, m.shift, m.size, m.width, m.height);
     return $.n('div', {'class': cls}, nodes);
   };

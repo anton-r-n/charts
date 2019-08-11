@@ -9,32 +9,32 @@
   })();
 
   /* Static component for wheel message */
-  $.GeoMap_WheelMsg = function(model) {
+  $.GeoMapWheelMsg = function(model) {
     model = $.obj(model);
-    var cls = 'GeoMap_WheelMsg';
+    var cls = 'GeoMapWheelMsg';
     var nodes = '';
     function update() {$.update(model, model.__ref)}
     model.to && w.clearTimeout(model.to);
     switch (model.state) {
-      case 1:
-        nodes = content;
-        model.state++;
-        model.to = w.setTimeout(update, 0);
-        break;
-      case 2:
-        nodes = content;
-        model.state++;
-        cls += ' animated';
-        model.to = w.setTimeout(update, 1200);
-        break;
-      case 3:
-        nodes = content;
-        model.state++;
-        model.to = w.setTimeout(update, 200);
-        break;
-      case 4:
-        model.state = 0;
-        model.to = w.setTimeout(update, 1000);
+    case 1:
+      nodes = content;
+      model.state++;
+      model.to = w.setTimeout(update, 0);
+      break;
+    case 2:
+      nodes = content;
+      model.state++;
+      cls += ' animated';
+      model.to = w.setTimeout(update, 1200);
+      break;
+    case 3:
+      nodes = content;
+      model.state++;
+      model.to = w.setTimeout(update, 200);
+      break;
+    case 4:
+      model.state = 0;
+      model.to = w.setTimeout(update, 1000);
     }
     return $.n('div', {'class': cls}, nodes);
   };

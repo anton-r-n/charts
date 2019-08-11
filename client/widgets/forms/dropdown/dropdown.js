@@ -30,7 +30,7 @@
         if (label) {
           if (meta.multiple) {
             (idx = value.indexOf(label.value)) > -1 ?
-                value.splice(idx, 1) : value.push(label.value);
+              value.splice(idx, 1) : value.push(label.value);
           } else {
             value[0] = label.value;
           }
@@ -65,12 +65,12 @@
         include = selected.indexOf(item.value) > -1;
         if (all || include) {
           nodes.push(
-              option(data[i], include),
-              all ? $.n('input', {
-                name: name,
-                type: 'hidden',
-                value: item.value,
-              }) : ''
+            option(data[i], include),
+            all ? $.n('input', {
+              name: name,
+              type: 'hidden',
+              value: item.value,
+            }) : ''
           );
         }
       }

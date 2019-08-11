@@ -36,8 +36,8 @@
 
       if (model._open) {
         nodes.push(
-            $.n('div', {'class': 'shadow'}, '', '', {mousedown: close}),
-            $.n('div', {'class': 'drawer'}, [header(), content(items)])
+          $.n('div', {'class': 'shadow'}, '', '', {mousedown: close}),
+          $.n('div', {'class': 'drawer'}, [header(), content(items)])
         );
       }
     }
@@ -54,7 +54,7 @@
 
   function header() {
     return $.n('div', {'class': 'header'},
-        [$.n('div', {'class': 'title'}, 'Menu')]);
+      [$.n('div', {'class': 'title'}, 'Menu')]);
   }
 
   function option(item) {

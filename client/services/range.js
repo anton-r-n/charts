@@ -19,7 +19,7 @@
    * @return {Array}
    */
   $.range = function(start, end, step) {
-    var i, step = +step || 1;
+    var i; step = +step || 1;
     var len = Math.ceil((end - start) / step);
     var arr = Array(len);
 

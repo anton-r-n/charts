@@ -9,10 +9,10 @@
    */
   $.parseQuery = function(query) {
     var i,
-        name,
-        pair,
-        params = {},
-        fields = query.split('&');
+      name,
+      pair,
+      params = {},
+      fields = query.split('&');
     for (i = 0; i < fields.length; i++) {
       pair = fields[i].split('=');
       name = decodeURIComponent(pair[0]);
@@ -47,8 +47,8 @@
    */
   $.formData = function(form) {
     var i, node, value,
-        data = {},
-        fields = form.querySelectorAll('[name]');
+      data = {},
+      fields = form.querySelectorAll('[name]');
     for (i = 0; i < fields.length; i++) {
       node = fields[i];
       if (node.name) {
@@ -59,8 +59,7 @@
             }
           }
         }
-        value = node.hasOwnProperty('data-value') ?
-            node['data-value'] : node.value;
+        value = 'data-value' in node ? node['data-value'] : node.value;
         data[node.name] = data[node.name] || [];
         data[node.name].push(value);
       }

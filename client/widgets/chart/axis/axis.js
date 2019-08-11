@@ -46,13 +46,13 @@
   /* Build formatting function */
   function format(meta) {
     switch (meta.type) {
-      case 'datetime':
-        var fmt = meta.tickFormat || '';
-        return fmt ? function(v) { return $.tzformat(v, fmt, 0) } : self;
-      case 'linear':
-        return $.humanize;
-      default:
-        return self;
+    case 'datetime':
+      var fmt = meta.tickFormat || '';
+      return fmt ? function(v) { return $.tzformat(v, fmt, 0) } : self;
+    case 'linear':
+      return $.humanize;
+    default:
+      return self;
     }
   }
 

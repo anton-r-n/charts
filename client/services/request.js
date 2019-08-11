@@ -1,6 +1,7 @@
 (function(w) {
   var $ = w.$ = w.$ || {};
   var TIMEOUT = 30000;
+  var _;
 
   /**
    * Creates a request
@@ -39,13 +40,13 @@
     var redirect = xhr.getResponseHeader('X-Location');
     if (redirect) {
       $.setLocation(redirect);
-      $.request(method, redirect, fn);
+      $.request(_, redirect, fn);
     }
   }
 
   $.requestJSON = function(method, url, fn) {
     return $.request(method, url, function(xhr) {
-      return (fn instanceof Function) ? json(xhr, fn) : xhr;
+      return fn instanceof Function ? json(xhr, fn) : xhr;
     });
   };
 

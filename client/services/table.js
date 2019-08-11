@@ -3,12 +3,12 @@
 
   $.tableSplit = function(meta, inputData) {
     var table = {thead: [], tbody: [], tfoot: []},
-        head = $.num_(meta.head),
-        foot = $.num_(meta.foot),
-        total = $.num_(meta.total),
-        cols = $.arr(meta.cols),
-        data = $.arr(inputData),
-        length = data.length;
+      head = $.num_(meta.head),
+      foot = $.num_(meta.foot),
+      total = $.num_(meta.total),
+      cols = $.arr(meta.cols),
+      data = $.arr(inputData),
+      length = data.length;
 
     if (length > head + total + foot) {
       if (head === 0) {

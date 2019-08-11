@@ -5,12 +5,12 @@
 
   function tooltip(e, data, rows, conf) {
     var rel = relative(e, conf),
-        col = conf.index(rel.x),
-        values = data.map(column, col),
-        header = buildHeader(col, conf, data),
-        closest = conf.bars ?
-            conf.stacked ? stackedIdx : closestBar : closestIdx,
-        metrics = closest(rows, col, rel, conf);
+      col = conf.index(rel.x),
+      values = data.map(column, col),
+      header = buildHeader(col, conf, data),
+      closest = conf.bars ?
+        conf.stacked ? stackedIdx : closestBar : closestIdx,
+      metrics = closest(rows, col, rel, conf);
 
     if (rows.length <= 1) metrics = -1;
 
@@ -59,7 +59,7 @@
       header: header,
       data: [],
     };
-    var i, val, descr;
+    var i, val;
     for (i = 0; i < values.length; i++) {
       val = values[i];
       val = val === null ? '—' : $.humanize(val);

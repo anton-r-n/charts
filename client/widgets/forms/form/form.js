@@ -14,15 +14,15 @@
     this.method = this.meta.method.toLowerCase() === 'get' ? 'get' : 'post';
     this.enctype = this._enctype(this.meta.enctype);
     this.contentType = this.enctype === 'json' ?
-        'application/json' : 'application/x-www-form-urlencoded';
+      'application/json' : 'application/x-www-form-urlencoded';
   }
 
   Form.prototype._enctype = function(enctype) {
     switch (enctype) {
-      case 'application/json': return 'json';
-      case 'multipart/form-data': return 'multipart';
-      case 'application/x-www-form-urlencoded': return 'urlencoded';
-      default: return 'plain';
+    case 'application/json': return 'json';
+    case 'multipart/form-data': return 'multipart';
+    case 'application/x-www-form-urlencoded': return 'urlencoded';
+    default: return 'plain';
     }
   };
 
@@ -43,10 +43,10 @@
     if (e.defaultPrevented) return;
     e.preventDefault();
     var xhr,
-        loc,
-        form = e.target,
-        ajax = this.meta.ajax,
-        data = this.data($.formData(form));
+      loc,
+      form = e.target,
+      ajax = this.meta.ajax,
+      data = this.data($.formData(form));
 
     if (this.method === 'get' && ajax === false) {
       loc = $.url(location);
@@ -58,9 +58,7 @@
         this.action.search = data;
         data = null;
       }
-      xhr = $.request(this.method, this.action, function(data) {
-        App.update(data || {'nodes': 'Update Data Error'});
-      });
+      xhr = $.request(this.method, this.action, callback);
       if (this.method === 'post') {
         xhr.setRequestHeader('Content-Type', this.contentType);
       }
@@ -70,10 +68,10 @@
 
   Form.prototype.render = function() {
     var cls = 'Form',
-        model = this.model,
-        nodes = model.nodes || [],
-        title = this.meta.title,
-        header = title ? $.n('h1', {'class': 'header'}, title) : '';
+      model = this.model,
+      nodes = model.nodes || [],
+      title = this.meta.title,
+      header = title ? $.n('h1', {'class': 'header'}, title) : '';
 
     if (model.meta.class) {
       if (model.meta.class.split(/\W/).indexOf('inline') > -1) {
@@ -93,4 +91,8 @@
       nodes: [header].concat(nodes),
     };
   };
+
+  function callback(data) {
+    w.App.update(data || {'nodes': 'Update Data Error'});
+  }
 })(this);

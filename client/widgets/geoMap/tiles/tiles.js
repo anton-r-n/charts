@@ -2,9 +2,9 @@
   /* Namespace */
   var $ = w.$ = w.$ || {};
 
-  $.GeoMap_Tiles = function(model) {
+  $.GeoMapTiles = function(model) {
     model = $.obj(model);
-    var cls = 'GeoMap_Tiles size' + model.ts;
+    var cls = 'GeoMapTiles size' + model.ts;
     return $.n('div', {'class': cls}, tiles(model));
   };
 
@@ -36,5 +36,5 @@
   }
 
   /* Reminder without sign */
-  function rem(a, b) { return a < 0 ? a % b + b : a % b; }
+  function rem(a, b) { return a < 0 ? a % b + b : a % b }
 })(this);

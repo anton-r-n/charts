@@ -6,7 +6,7 @@
   /* Combine header, body, and aside */
   $.MainContent = function(any) {
     var model = $.obj(any);
-    var data = $.obj(model.data);
+    var data = Object(model.data);
     data._width = width(w.App._width, model._aside);
 
     var header = {widget: 'MainHeader', title: model.title};

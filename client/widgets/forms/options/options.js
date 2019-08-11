@@ -15,7 +15,7 @@
       return option(item, type, name, checked);
     });
 
-    function change(e) {
+    function change() {
       meta.value = $.formData(model.__ref)[name];
     }
 

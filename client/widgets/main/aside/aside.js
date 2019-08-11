@@ -1,7 +1,7 @@
 (function(w) {
   var $ = w.$ = w.$ || {};
 
-  $.MainAside = function(any) {
+  $.MainAside = function() {
     return {
       name: 'div',
       attrs: {'class': 'MainAside'},

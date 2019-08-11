@@ -22,7 +22,7 @@
   function isNumber(v) { return typeof v === 'number' && v === v }
 
   /* Define chart's rectangle */
-  function rect(model, meta) {
+  function rect(model) {
     return {
       w: Math.max(+model._width || 0, 10),
       h: Math.max(+model.height || model._height, 10),
@@ -40,7 +40,7 @@
       stacked: !!meta.stacked,
       zero: meta.zero !== false,
       tiny: tiny,
-      bucketGap: +meta.bucketGap || (!!meta.stacked ? 0.2 : 0.05),
+      bucketGap: +meta.bucketGap || (meta.stacked ? 0.05 : 0.2),
       bucketGapMin: +meta.bucketGapMin || 1,
       bucketGapMax: +meta.bucketGapMin || 1,
       cols: columns(meta.cols, len),
@@ -114,13 +114,13 @@
 
   function index(r, d, bars) {
     var max = bars ? d - 1 : d;
-    return function(x) { return Math.min((x / r * d) << 0, max) };
+    return function(x) { return Math.min(x / r * d << 0, max) };
   }
 
   function linear(x0, x1, v0, v1) {
     return function(v) {
       return isNumber(v) ? round((v - v0) / (v1 - v0) * (x1 - x0)) : v;
-    }
+    };
   }
 
   var Types = {

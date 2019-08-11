@@ -5,7 +5,7 @@
   $.Group = function(model) {
     model = $.obj(model);
     var height = Math.max(+(model.height || model._height) | 0, 24);
-    var width = Math.min(w.App._width, ((+model._width | 0) || w.App._width));
+    var width = Math.min(w.App._width, +model._width | 0 || w.App._width);
     var style = 'width:' + width + 'px';
     var nodes = $.arr(model.nodes);
     var cls = 'Group' + (model.cls ? ' ' + model.cls : '');
@@ -26,13 +26,13 @@
       name: 'div',
       attrs: {'class': cls, 'style': style},
       nodes: [
-        model.title ? header(model.title, model.menu) : '',
+        model.title ? header(model.title/* model.menu */) : '',
         $.n('div', {'class': 'body'}, model.nodes),
       ],
     };
   };
 
-  function header(title, menu) {
+  function header(title/* menu */) {
     return $.n('div', {'class': 'header withMenu'}, [
       $.n('span', {'class': 'title'}, title),
       $.n('div', {'class': 'menu'}, $.n('b', {'class': 'icon'})),

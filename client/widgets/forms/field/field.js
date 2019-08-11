@@ -22,7 +22,7 @@
 
   function label(meta) {
     return 'label' in meta ? $.n('div', {'class': 'label'},
-        $.n('label', {'for': meta._id}, meta.label)) : '';
+      $.n('label', {'for': meta._id}, meta.label)) : '';
   }
 
   function input(model, meta) {

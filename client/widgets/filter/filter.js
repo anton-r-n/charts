@@ -19,7 +19,7 @@
       // console.log('--', content.innerText);
       model._focus = e && e.type === 'focus';
       $.update(model, model.__ref);
-      if (!model._focus) { content.blur(); }
+      if (!model._focus) { content.blur() }
     }
 
     var nodes = type($.obj(model.rule));
@@ -52,9 +52,9 @@
 
   function parenthesis(term) {
     return Array.prototype.concat(
-        $.n('span', {'class': 'paren'}, '('),
-        term,
-        $.n('span', {'class': 'paren'}, ')')
+      $.n('span', {'class': 'paren'}, '('),
+      term,
+      $.n('span', {'class': 'paren'}, ')')
     );
   }
 

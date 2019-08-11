@@ -6,7 +6,6 @@
 
   $.Main = function(any) {
     var model = Object(any);
-    var data = Object(model.data);
     var menu = {widget: 'MainMenu', data: model.menu};
     var content = {
       widget: 'MainContent',

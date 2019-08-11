@@ -4,7 +4,6 @@
   $.FormInput = function(model) {
     model = $.obj(model);
     var meta = $.obj(model.meta);
-    var cls = 'text';
     var attrs = {
       'id': meta._id || '',
       'name': meta.name || '',
@@ -15,7 +14,7 @@
     };
 
     attrs['class'] = attrs.type === 'submit' ?
-        'submit button mainTarget' : 'text';
+      'submit button mainTarget' : 'text';
 
     return $.n('input', attrs);
   };

@@ -8,7 +8,7 @@
   var handlers = {
     keydown: function(e) {
       !e.defaultPrevented && e.key === 'Escape' ?
-          $.syncEvent('evtEscape') : $.syncEvent('evtKeydown', e);
+        $.syncEvent('evtEscape') : $.syncEvent('evtKeydown', e);
     },
 
     mousedown: function(e) {
@@ -40,11 +40,11 @@
   $.events = {
     init: function() {
       var key, handler;
-      for (var key in handlers) {
+      for (key in handlers) {
         handler = handlers[key];
         key !== 'wheel' ?
-            w.addEventListener(key, handler) :
-            w.addEventListener(key, handler, {passive: true});
+          w.addEventListener(key, handler) :
+          w.addEventListener(key, handler, {passive: true});
       }
     },
 

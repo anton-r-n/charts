@@ -8,11 +8,11 @@
     var attrs = {'class': 'external', 'target': '_blank', 'href': url};
     var copy = String.fromCharCode(169, 32);
     var link = $.n('a', attrs, text);
-    return $.n('div', {'class': 'GeoMap_Copyright'}, [copy, link]);
+    return $.n('div', {'class': 'GeoMapCopyright'}, [copy, link]);
   })();
 
   /* Static component for copyright */
-  $.GeoMap_Copyright = function() {
+  $.GeoMapCopyright = function() {
     return copyright;
   };
 })(this);

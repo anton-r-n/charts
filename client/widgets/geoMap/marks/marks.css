@@ -1,18 +1,18 @@
-.GeoMap_Marks .mark {
+.GeoMapMarks .mark {
   position: absolute;
 }
 
-.GeoMap_Marks .mark:hover {
+.GeoMapMarks .mark:hover {
   z-index: 1;
 }
 
-.GeoMap_Marks .mark .plate {
+.GeoMapMarks .mark .plate {
   position: absolute;
   bottom: 6px;
   left: 0;
 }
 
-.GeoMap_Marks .mark .label {
+.GeoMapMarks .mark .label {
   color: #fff;
   border-color: rgba(8, 183, 255, .7);
   background-color: rgba(8, 183, 255, .7);
@@ -30,14 +30,14 @@
   font-size: 100%;
 }
 
-.GeoMap_Marks .mark .label:hover {
+.GeoMapMarks .mark .label:hover {
   border-radius: 3px;
   font-size: 250%;
   border-color: rgba(8, 183, 255, 1);
   background-color: rgba(8, 183, 255, 1);
 }
 
-.GeoMap_Marks .mark .label:after {
+.GeoMapMarks .mark .label:after {
   content: '';
   display: block;
   width: 0;
@@ -54,7 +54,7 @@
   left: 50%;
 }
 
-.GeoMap_Marks .mark .title {
+.GeoMapMarks .mark .title {
   text-transform: uppercase;
   font-size: 60%;
 }

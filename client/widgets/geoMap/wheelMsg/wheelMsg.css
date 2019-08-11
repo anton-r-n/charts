@@ -1,4 +1,4 @@
-.GeoMap_WheelMsg .msg {
+.GeoMapWheelMsg .msg {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -10,7 +10,7 @@
   transition: opacity .2s ease;
 }
 
-.GeoMap_WheelMsg .text {
+.GeoMapWheelMsg .text {
   color: #fff;
   font-size: 20px;
   font-weight: bold;
@@ -20,6 +20,6 @@
   text-align: center;
 }
 
-.GeoMap_WheelMsg.animated .msg {
+.GeoMapWheelMsg.animated .msg {
   opacity: 1;
 }

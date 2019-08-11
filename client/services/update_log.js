@@ -30,8 +30,8 @@
       var total = end - start.t0;
       var src = s.widget ? 'Widget: ' + s.widget : 'Node: ' + s.name;
       w.console.log(
-          '#%s JS: %s ms; Browser: %s ms; Total %s ms; %s',
-          idx++, js, br, total, src);
+        '#%s JS: %s ms; Browser: %s ms; Total %s ms; %s',
+        idx++, js, br, total, src);
       if (typeof fn === 'function') fn();
     };
   }

@@ -57,7 +57,7 @@
     var x = $.mouse.x;
     var width = w.innerWidth;
     return (width < 600 && x < width / 2) || (x < width - maxWidth - 5) ?
-        'left:' + (space + x) : 'right:' + (width + space - x);
+      'left:' + (space + x) : 'right:' + (width + space - x);
   }
 
   function getY() {
