@@ -70,7 +70,7 @@ $(MOCK_TARGET): $(MOCK_FILES)
 	@gzip -fk $@
 	@echo 'done:' $@
 
-.PHONY: hint lint style clean wc
+.PHONY: hint lint style clean uglify wc
 
 hint:
 	@jshint $(JS_FILES) $(JS_TEST_FILES)
@@ -80,6 +80,11 @@ lint:
 
 clean:
 	rm -rf $(BUILD)/*
+
+uglify:
+	# Beautified output of minified `update.js`
+	@uglifyjs -c reduce_funcs=false,inline=false -m --mangle-props regex=/_$$/ \
+  ./client/services/update.js | uglifyjs -b
 
 wc:
 	@echo '\nHTML'; wc -lc $(HTML_FILES)
