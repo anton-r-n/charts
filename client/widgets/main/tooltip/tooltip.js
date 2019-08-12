@@ -67,7 +67,7 @@
   }
 
   function move(e) {
-    if (e && !e.preventTooltip) {
+    if (e && !e.preventTooltip && model.data) {
       e.preventTooltip = true;
       update(e.target.getAttribute('data-tooltip'));
     }
