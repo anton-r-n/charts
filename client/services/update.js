@@ -49,74 +49,82 @@
   /* Update node recursively according to spec */
   function update(spec, node, fn) {
     if (typeof fn === 'function') w.setTimeout(delay(fn), 0);
-    return spec == null ? text('', node) : cases(spec, node, str(spec.widget));
+    return spec == null ? text(spec, node) :
+      spec.widget ? widget(spec, node, '' + spec.widget) :
+        spec.name ? element(spec, node) :
+          text(spec, node);
   }
 
-  /* Handle cases when spec is widget, tag, or text */
-  function cases(spec, node, widget) {
-    return widget[0] >= 'A' && widget[0] <= 'Z' ?
-      spec.__ref = update(($[widget] || error)(spec), node) :
-      spec.name ? spec.__ref = updateNode(spec, node) : text(str(spec), node);
+  /* Handle cases when spec is widget */
+  function widget(spec, node, wn) {
+    var fn = wn[0] >= 'A' && wn[0] <= 'Z' ? $[wn] : err || err;
+    return spec.__ref = update(fn(spec), node);
   }
 
-  /* Update a single node */
-  function updateNode(next, node) {
-    var k, n, p, nn, prev;
+  /* Update element node */
+  function element(next, node, prev) {
+    node = reuse(next, node);
+    prev = node.__spec || 1;
+    attrs(node, next.attrs || 1, prev.attrs || 1);
+    nodes(node, arr(next.nodes), node.childNodes);
+    props(node, next.props || 1, prev.props || 1);
+    events(node, next.events || 1, prev.events || 1);
+    return node.__spec = next, next.__ref = node;
+  }
 
-    /* Reuse the existent node or create a new one */
-    node = node && eq(node.nodeName, next.name) ? node : next.xmlns ?
-      d.createElementNS(next.xmlns, next.name) : d.createElement(next.name);
-
-    /* Previous node spec */
-    prev = obj(node.__spec);
-
-    /* Attributes */
-    n = obj(next.attrs), p = obj(prev.attrs);
+  /* Update node attrbutes */
+  function attrs(node, n, p, k) {
     for (k in p) if (n[k] === _) node.removeAttribute(k);
     for (k in n) if (n[k] !== p[k]) node.setAttribute(k, n[k]);
+  }
 
-    /* Childnodes */
-    n = arr(next.nodes), p = node.childNodes;
+  /* Update child nodes */
+  function nodes(node, n, p, k, nn) {
     for (k = 0; k < n.length; k++) {
       nn = update(n[k], p[k]);
       if (nn !== p[k]) node.insertBefore(nn, p[k]);
     }
     while (p[k]) node.removeChild(p[k]);
+  }
 
-    /* Properties */
-    n = obj(next.props), p = obj(prev.props);
+  /* Update node properties */
+  function props(node, n, p, k) {
     for (k in p) if (n[k] === _) node[k] = null;
     for (k in n) if (n[k] !== p[k]) node[k] = n[k];
+  }
 
-    /* Events */
-    n = obj(next.events), p = obj(prev.events);
+  /* Update node event listeners */
+  function events(node, n, p, k) {
     for (k in p) if (n[k] !== p[k]) node.removeEventListener(k, p[k]);
     for (k in n) if (n[k] !== p[k]) node.addEventListener(k, n[k]);
-
-    node.__spec = next;
-    return node;
   }
 
   /* Update or create a DOM TextNode with the value */
   function text(v, n) {
+    v = v == null ? '' : v;
     return n && n.nodeType === 3 ?
       (n.nodeValue !== v && (n.nodeValue = v), n) : d.createTextNode(v);
   }
 
-  /* Compare strings case insensitive */
-  function eq(a, b) { return str(a).toLowerCase() === str(b).toLowerCase() }
+  /* Create or replace node */
+  function reuse(spec, node) {
+    var prev = node ? node.__spec || 1 : 1;
+    var name = node ? node.nodeName.toLowerCase() : '';
+    var reuse = spec.xmlns === prev.xmlns && spec.name === name;
+    return reuse ? node : create(spec, node, spec.xmlns);
+  }
+
+  /* Create and replace node */
+  function create(s, n, ns, e) {
+    e = ns ? d.createElementNS(ns, s.name) : d.createElement(s.name);
+    return n && n.parentNode && n.parentNode.replaceChild(e, n), e;
+  }
 
   /* Any to array */
   function arr(a) { return Array.isArray(a) ? a : a != _ ? [a] : 1 }
 
-  /* Any to object */
-  function obj(o) { return o != _ ? o : 1 }
-
-  /* Any to string */
-  function str(s) { return '' + s }
-
   /* Handles non existent widgets */
-  function error(model) { w.console.error('Widget not found', model) }
+  function err(model) { w.console.error('Widget not found', model) }
 
   /* Call a function after rendering */
   function delay(fn) { return function() { d.body.clientWidth, fn() } }
