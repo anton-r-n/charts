@@ -76,13 +76,6 @@
 .Chart.bars .area5 { fill: #9467bd; }
 .Chart .dot.color_5 { background-color: #9467bd; }
 
-
-.Chart.bars .area path {
-  color-rendering: optimizeSpeed;
-  shape-rendering: optimizeSpeed;
-  /* shape-rendering: crispEdges; */
-}
-
 .opacity_col .Chart.bars path {
   opacity: .3;
 }
